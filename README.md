@@ -28,7 +28,7 @@ Conversion notes:
 
 ## Project description
 
-As a security professional working at a health care company, I am required to regularly update a file that identifies employees who can access restricted content. The file `"allow_list.txt"` contains the IP addresses linked to employees. There’s also a remove list that identifies which employees I must remove from the allow list. I created an algorithm that uses Python code to check whether the allow list contains any IP addresses identified on the remove list. If so, these IP addresses are removed from the file containing the allow list.   
+In this scenario, I am a security professional working at a health care company. I am required to regularly update a file that identifies employees who can access restricted content. The file `"allow_list.txt"` contains the IP addresses linked to employees. There’s also a remove list that identifies which employees I must remove from the allow list. I created an algorithm that uses Python code to check whether the allow list contains any IP addresses identified on the remove list. If so, these IP addresses are removed from the file containing the allow list.   
 
 
 ## Open the file that contains the allow list
