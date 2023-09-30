@@ -46,7 +46,9 @@ In my algorithm, the keyword `with` is used alongside the `open()` function in o
 
 ## Read the file contents
 
-In order to read the file contents, I used the `.read()` method to convert it into a string. 
+In order to read the file contents, I used the `.read()` method to convert it into a string: 
+
+![image4](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/f0ee2c33-dcfa-42d9-b31d-844ac6509c74)
 
 The `.read()` method converts files into strings. This is necessary in order for me to use and display the contents of the allow list file that was read. I applied the `.read()` method to the `file` variable identified in the `with` statement. Then, I assigned this string to another variable called `ip_addresses`. 
 
@@ -55,6 +57,8 @@ The `.read()` method converts files into strings. This is necessary in order for
 
 In order to remove individual IP addresses from the allow list, I needed it to be in list format. Therefore, I next used the `.split()` method to convert the `ip_addresses` string into a list:
 
+![image7](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/9e86cb4c-f5a3-458a-b7e8-ae8879b70b25)
+
 The `.split()` method converts a string into a list. It separates the string based on a specified character that’s passed into `.split()` as an argument. In this algorithm, the `.split()` function takes the data stored in the variable `ip_addresses`, which is a string of IP addresses that are each separated by whitespace, and it converts this string into a list of IP addresses. To store this list, I reassigned it back to the variable `ip_addresses`. The purpose of splitting `ip_addresses` into a list is to make it easier to remove IP addresses from the allow list.  
 
 
@@ -62,6 +66,7 @@ The `.split()` method converts a string into a list. It separates the string bas
 
 An integral part of my algorithm involves iterating through `remove_list`, which contains all of the IP addresses that should be removed from the `ip_addresses` list. To do this, I incorporated a `for` loop:
 
+![image5](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/7759491c-6cc9-4ed1-9688-4f579e3522eb)
 
 The `for` loop allowed me to automate repetition of the code based on a sequence. The `for` keyword starts the `for` loop. It is followed by the loop variable `element` and the keyword `in`. The keyword `in` indicates to iterate through the sequence `ip_addresses` and assign each value to the loop variable `element`.  
 
@@ -69,6 +74,8 @@ The `for` loop allowed me to automate repetition of the code based on a sequence
 ## Remove IP addresses that are on the remove list
 
 My algorithm requires me to remove all of the IP addresses from the allow list (ip_addresses) that are also on the remove list (remove_list). Because there were no duplicates in ip_addresses, I was able to use the following code to do this:  
+
+![image1](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/13744762-a261-445c-8112-d4632993237d)
 
 Within the for loop, I created a conditional statement that evaluated whether or not the loop variable element was found in the ip_addresses list. Applying .remove() to elements that were not found in ip_addresses would result in an error. 
 
@@ -79,12 +86,15 @@ Within the conditional, I applied .remove() to ip_addresses. The variable elemen
 
 In the final step of my algorithm, I needed to update the allow list file with the revised list of IP addresses. To do this, I needed to convert the list back into a string. I used the `.join()` method for this:
 
+![image8](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/0f6c8344-792e-40ed-9383-6b08f108d51a)
+
 The `.join()` method concatenates the elements of an iterable into a string. It is applied to a string containing characters that will separate the elements in the iterable once joined into a string. I used the string `("\n")` as the separator to instruct Python to place each element on a new line. In this algorithm, I used the `.join()` method to create a string from the list `ip_addresses` so that I could pass it in as an argument to the `.write()` method when writing to the file `"allow_list.txt"`. 
 
 Then, I used another with statement and the .write() method to update the file:
 
+![image2](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/e8aa8168-7c25-45a2-9489-cdcdd5acfdad)
 
-## This time, I used `"w"` as the second argument in the `open()` function in my with statement. This argument indicates that I want to open a file to write over its contents. When using this argument `"w"`, I can call the `.write()` method in the body of the `with` statement. The `.write()` method writes string data to a specified file and replaces the contents of an existing file.
+This time, I used `"w"` as the second argument in the `open()` function in my with statement. This argument indicates that I want to open a file to write over its contents. When using this argument `"w"`, I can call the `.write()` method in the body of the `with` statement. The `.write()` method writes string data to a specified file and replaces the contents of an existing file.
 
 In this case I wanted to write the updated allow list as a string to the file `"allow_list.txt"`. Now, the restricted content will no longer be accessible to any IP addresses that were removed from the allow list. To rewrite the file, I appended the `.write()` function to the file object `file` that I identified in the `with` statement. I passed in the `ip_addresses` variable as the argument to specify that the contents of the file specified in the `with` statement should be replaced with the data contained in this variable.
 
