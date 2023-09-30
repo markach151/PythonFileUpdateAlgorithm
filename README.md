@@ -33,7 +33,7 @@ In this scenario, I am a security professional working at a health care company.
 
 ## Open the file that contains the allow list
 
-For the first part of the algorithm, I opened `the "allow_list.txt"` file. First, I assigned this file name as a string to the `import_file` variable: 
+For the first part of the algorithm, I opened the `"allow_list.txt"` file. First, I assigned this file name as a string to the `import_file` variable: 
 
 ![image6](https://github.com/markach151/PythonFileUpdateAlgorithm/assets/84886088/32d9bd6d-8ff1-49d2-9170-68ea3d5205e2)
 
